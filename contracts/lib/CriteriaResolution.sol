@@ -53,7 +53,7 @@ contract CriteriaResolution is CriteriaResolutionErrors {
             uint256 totalAdvancedOrders = advancedOrders.length;
 
             // Iterate over each criteria resolver.
-            for (uint256 i = 0; i < totalCriteriaResolvers; ++i) {
+            for (uint256 i; i < totalCriteriaResolvers; ++i) {
                 // Retrieve the criteria resolver.
                 CriteriaResolver memory criteriaResolver = (
                     criteriaResolvers[i]
@@ -163,7 +163,7 @@ contract CriteriaResolution is CriteriaResolutionErrors {
             }
 
             // Iterate over each advanced order.
-            for (uint256 i = 0; i < totalAdvancedOrders; ++i) {
+            for (uint256 i; i < totalAdvancedOrders; ++i) {
                 // Retrieve the advanced order.
                 AdvancedOrder memory advancedOrder = advancedOrders[i];
 
@@ -181,7 +181,7 @@ contract CriteriaResolution is CriteriaResolutionErrors {
                 uint256 totalItems = orderParameters.consideration.length;
 
                 // Iterate over each consideration item on the order.
-                for (uint256 j = 0; j < totalItems; ++j) {
+                for (uint256 j; j < totalItems; ++j) {
                     // Ensure item type no longer indicates criteria usage.
                     if (
                         _isItemWithCriteria(
@@ -196,7 +196,7 @@ contract CriteriaResolution is CriteriaResolutionErrors {
                 totalItems = orderParameters.offer.length;
 
                 // Iterate over each offer item on the order.
-                for (uint256 j = 0; j < totalItems; ++j) {
+                for (uint256 j; j < totalItems; ++j) {
                     // Ensure item type no longer indicates criteria usage.
                     if (
                         _isItemWithCriteria(orderParameters.offer[j].itemType)

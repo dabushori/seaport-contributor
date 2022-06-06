@@ -515,7 +515,7 @@ contract TokenTransferrer is TokenTransferrerErrors {
 
             // Iterate over each batch transfer.
             for {
-                let i := 0
+                let i
             } lt(i, len) {
                 i := add(i, 1)
             } {

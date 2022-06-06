@@ -504,7 +504,7 @@ contract BasicOrderFulfiller is OrderValidator {
                 totalAdditionalRecipients := calldataload(
                     BasicOrder_totalOriginalAdditionalRecipients_cdPtr
                 )
-                let i := 0
+                let i
                 // prettier-ignore
                 for {} lt(i, totalAdditionalRecipients) {
                     i := add(i, 1)
@@ -948,7 +948,7 @@ contract BasicOrderFulfiller is OrderValidator {
         uint256 totalAdditionalRecipients = additionalRecipients.length;
 
         // Iterate over each additional recipient.
-        for (uint256 i = 0; i < totalAdditionalRecipients; ) {
+        for (uint256 i; i < totalAdditionalRecipients; ) {
             // Retrieve the additional recipient.
             AdditionalRecipient calldata additionalRecipient = (
                 additionalRecipients[i]
@@ -1037,7 +1037,7 @@ contract BasicOrderFulfiller is OrderValidator {
         uint256 totalAdditionalRecipients = additionalRecipients.length;
 
         // Iterate over each additional recipient.
-        for (uint256 i = 0; i < totalAdditionalRecipients; ) {
+        for (uint256 i; i < totalAdditionalRecipients; ) {
             // Retrieve the additional recipient.
             AdditionalRecipient calldata additionalRecipient = (
                 additionalRecipients[i]

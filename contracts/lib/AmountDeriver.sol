@@ -41,7 +41,7 @@ contract AmountDeriver is AmountDerivationErrors {
         // Only modify end amount if it doesn't already equal start amount.
         if (startAmount != endAmount) {
             // Leave extra amount to add for rounding at zero (i.e. round down).
-            uint256 extraCeiling = 0;
+            uint256 extraCeiling;
 
             // If rounding up, set rounding factor to one less than denominator.
             if (roundUp) {

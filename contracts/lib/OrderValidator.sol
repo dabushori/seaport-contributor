@@ -321,7 +321,7 @@ contract OrderValidator is Executor, ZoneInteraction {
             uint256 totalOrders = orders.length;
 
             // Iterate over each order.
-            for (uint256 i = 0; i < totalOrders; ) {
+            for (uint256 i; i < totalOrders; ) {
                 // Retrieve the order.
                 OrderComponents calldata order = orders[i];
 
@@ -399,7 +399,7 @@ contract OrderValidator is Executor, ZoneInteraction {
             uint256 totalOrders = orders.length;
 
             // Iterate over each order.
-            for (uint256 i = 0; i < totalOrders; ) {
+            for (uint256 i; i < totalOrders; ) {
                 // Retrieve the order.
                 Order calldata order = orders[i];
 

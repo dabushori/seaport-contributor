@@ -212,7 +212,7 @@ contract OrderFulfiller is
             }
 
             // Iterate over each offer on the order.
-            for (uint256 i = 0; i < orderParameters.offer.length; ) {
+            for (uint256 i; i < orderParameters.offer.length; ) {
                 // Retrieve the offer item.
                 OfferItem memory offerItem = orderParameters.offer[i];
                 // Declare a nested scope to minimize stack depth.
@@ -306,7 +306,7 @@ contract OrderFulfiller is
             }
 
             // Iterate over each consideration item on the order.
-            for (uint256 i = 0; i < orderParameters.consideration.length; ) {
+            for (uint256 i; i < orderParameters.consideration.length; ) {
                 // Retrieve the consideration item.
                 ConsiderationItem memory considerationItem = (
                     orderParameters.consideration[i]
@@ -471,7 +471,7 @@ contract OrderFulfiller is
         // Skip overflow check as the index for the loop starts at zero.
         unchecked {
             // Iterate over the given orders.
-            for (uint256 i = 0; i < totalOrders; ++i) {
+            for (uint256 i; i < totalOrders; ++i) {
                 // Convert to partial order (1/1 or full fill) and update array.
                 advancedOrders[i] = _convertOrderToAdvanced(orders[i]);
             }

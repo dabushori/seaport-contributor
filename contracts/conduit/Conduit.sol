@@ -68,7 +68,7 @@ contract Conduit is ConduitInterface, TokenTransferrer {
         uint256 totalStandardTransfers = transfers.length;
 
         // Iterate over each transfer.
-        for (uint256 i = 0; i < totalStandardTransfers; ) {
+        for (uint256 i; i < totalStandardTransfers; ) {
             // Retrieve the transfer in question.
             ConduitTransfer calldata standardTransfer = transfers[i];
 
@@ -143,7 +143,7 @@ contract Conduit is ConduitInterface, TokenTransferrer {
         uint256 totalStandardTransfers = standardTransfers.length;
 
         // Iterate over each standard transfer.
-        for (uint256 i = 0; i < totalStandardTransfers; ) {
+        for (uint256 i; i < totalStandardTransfers; ) {
             // Retrieve the transfer in question.
             ConduitTransfer calldata standardTransfer = standardTransfers[i];
 

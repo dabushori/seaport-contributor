@@ -278,10 +278,10 @@ contract FulfillmentApplier is FulfillmentApplicationErrors {
             )
 
             // Declare a variable for the final aggregated item amount.
-            let amount := 0
+            let amount
 
             // Create variable to track errors encountered with amount.
-            let errorBuffer := 0
+            let errorBuffer
 
             // Only add offer amount to execution amount on a nonzero numerator.
             if mload(add(orderPtr, AdvancedOrder_numerator_offset)) {
@@ -571,10 +571,10 @@ contract FulfillmentApplier is FulfillmentApplicationErrors {
             )
 
             // Declare a variable for the final aggregated item amount.
-            let amount := 0
+            let amount
 
             // Create variable to track errors encountered with amount.
-            let errorBuffer := 0
+            let errorBuffer
 
             // Only add consideration amount to execution amount if numerator is
             // greater than zero.

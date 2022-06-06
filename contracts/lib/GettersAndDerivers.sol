@@ -75,7 +75,7 @@ contract GettersAndDerivers is ConsiderationBase {
 
             // Iterate over the offer items.
             // prettier-ignore
-            for { let i := 0 } lt(i, offerLength) {
+            for { let i } lt(i, offerLength) {
                 i := add(i, 1)
             } {
                 // Read the pointer to the offer data and subtract one word
@@ -130,7 +130,7 @@ contract GettersAndDerivers is ConsiderationBase {
 
             // Iterate over the offer items (not including tips).
             // prettier-ignore
-            for { let i := 0 } lt(i, originalConsiderationLength) {
+            for { let i } lt(i, originalConsiderationLength) {
                 i := add(i, 1)
             } {
                 // Read the pointer to the consideration data and subtract one

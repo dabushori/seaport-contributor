@@ -185,7 +185,7 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
         // Skip overflow checks as all for loops are indexed starting at zero.
         unchecked {
             // Iterate over each order.
-            for (uint256 i = 0; i < totalOrders; ++i) {
+            for (uint256 i; i < totalOrders; ++i) {
                 // Retrieve the current order.
                 AdvancedOrder memory advancedOrder = advancedOrders[i];
 
@@ -251,7 +251,7 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
                 OfferItem[] memory offer = advancedOrder.parameters.offer;
 
                 // Iterate over each offer item on the order.
-                for (uint256 j = 0; j < offer.length; ++j) {
+                for (uint256 j; j < offer.length; ++j) {
                     // Retrieve the offer item.
                     OfferItem memory offerItem = offer[j];
 
@@ -295,7 +295,7 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
                 );
 
                 // Iterate over each consideration item on the order.
-                for (uint256 j = 0; j < consideration.length; ++j) {
+                for (uint256 j; j < consideration.length; ++j) {
                     // Retrieve the consideration item.
                     ConsiderationItem memory considerationItem = (
                         consideration[j]
@@ -368,7 +368,7 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
         // Skip overflow checks as all for loops are indexed starting at zero.
         unchecked {
             // Iterate over each order.
-            for (uint256 i = 0; i < totalOrders; ++i) {
+            for (uint256 i; i < totalOrders; ++i) {
                 // Do not emit an event if no order hash is present.
                 if (orderHashes[i] == bytes32(0)) {
                     continue;
@@ -468,10 +468,10 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
         // Skip overflow checks as all for loops are indexed starting at zero.
         unchecked {
             // Track number of filtered executions.
-            uint256 totalFilteredExecutions = 0;
+            uint256 totalFilteredExecutions;
 
             // Iterate over each offer fulfillment.
-            for (uint256 i = 0; i < totalOfferFulfillments; ++i) {
+            for (uint256 i; i < totalOfferFulfillments; ++i) {
                 /// Retrieve the offer fulfillment components in question.
                 FulfillmentComponent[] memory components = (
                     offerFulfillments[i]
@@ -497,7 +497,7 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
             }
 
             // Iterate over each consideration fulfillment.
-            for (uint256 i = 0; i < totalConsiderationFulfillments; ++i) {
+            for (uint256 i; i < totalConsiderationFulfillments; ++i) {
                 /// Retrieve consideration fulfillment components in question.
                 FulfillmentComponent[] memory components = (
                     considerationFulfillments[i]
@@ -577,7 +577,7 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
         // Skip overflow checks as all for loops are indexed starting at zero.
         unchecked {
             // Iterate over orders to ensure all considerations are met.
-            for (uint256 i = 0; i < totalOrders; ++i) {
+            for (uint256 i; i < totalOrders; ++i) {
                 // Retrieve the order in question.
                 AdvancedOrder memory advancedOrder = advancedOrders[i];
 
@@ -598,7 +598,7 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
                 );
 
                 // Iterate over each consideration item to ensure it is met.
-                for (uint256 j = 0; j < consideration.length; ++j) {
+                for (uint256 j; j < consideration.length; ++j) {
                     // Retrieve remaining amount on the consideration item.
                     uint256 unmetAmount = consideration[j].startAmount;
 
@@ -621,7 +621,7 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
         bytes memory accumulator = new bytes(AccumulatorDisarmed);
 
         // Iterate over each execution.
-        for (uint256 i = 0; i < executions.length; ) {
+        for (uint256 i; i < executions.length; ) {
             // Retrieve the execution and the associated received item.
             Execution memory execution = executions[i];
             ReceivedItem memory item = execution.item;
@@ -752,10 +752,10 @@ contract OrderCombiner is OrderFulfiller, FulfillmentApplier {
         // Skip overflow checks as all for loops are indexed starting at zero.
         unchecked {
             // Track number of filtered executions.
-            uint256 totalFilteredExecutions = 0;
+            uint256 totalFilteredExecutions;
 
             // Iterate over each fulfillment.
-            for (uint256 i = 0; i < totalFulfillments; ++i) {
+            for (uint256 i; i < totalFulfillments; ++i) {
                 /// Retrieve the fulfillment in question.
                 Fulfillment calldata fulfillment = fulfillments[i];
 
